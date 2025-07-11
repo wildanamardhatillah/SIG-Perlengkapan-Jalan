@@ -61,7 +61,7 @@
         }
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[-3.6094525817310927,114.67603857724559],[-3.572804660180619,114.75577594921974]]);
+        }).fitBounds([[-3.6234757489515763,114.62219537397979],[-3.547105986688492,114.78835825262388]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -164,20 +164,17 @@
                         <td class="visible-with-data" id="kondisi">' + (feature.properties['kondisi'] !== null ? autolinker.link(String(feature.properties['kondisi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Jenis Marka</th>\
-                        <td class="visible-with-data" id="jenis_mark">' + (feature.properties['jenis_mark'] !== null ? autolinker.link(String(feature.properties['jenis_mark']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['jenis_mark'] !== null ? autolinker.link(String(feature.properties['jenis_mark']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Jadwal Perawatan</th>\
+                        <th scope="row">Jadwal</th>\
                         <td class="visible-with-data" id="Jadwal">' + (feature.properties['Jadwal'] !== null ? autolinker.link(String(feature.properties['Jadwal']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Panjang Marka (m)</th>\
-                        <td class="visible-with-data" id="Panjang">' + (feature.properties['Panjang'] !== null ? autolinker.link(String(feature.properties['Panjang']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Panjang'] !== null ? autolinker.link(String(feature.properties['Panjang']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Foto</th>\
-                        <td class="visible-with-data" id="Foto">' + (feature.properties['Foto'] !== null ? '<img src="images/' + String(feature.properties['Foto']).replace(/[\\/:]/g, '_').trim().replace(/'/g, '\'').replace(/"/g, '&quot;') + '">' : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Foto'] !== null ? '<img src="images/' + String(feature.properties['Foto']).replace(/[\\/:]/g, '_').trim().replace(/'/g, '\'').replace(/"/g, '&quot;') + '">' : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -269,7 +266,7 @@
                         <td class="visible-with-data" id="Kondisi">' + (feature.properties['Kondisi'] !== null ? autolinker.link(String(feature.properties['Kondisi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Jadwal Perawatan</th>\
+                        <th scope="row">Jadwal</th>\
                         <td class="visible-with-data" id="Jadwal">' + (feature.properties['Jadwal'] !== null ? autolinker.link(String(feature.properties['Jadwal']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
@@ -353,11 +350,11 @@
                         <td class="visible-with-data" id="No">' + (feature.properties['No'] !== null ? autolinker.link(String(feature.properties['No']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Nama Rambu</th>\
+                        <th scope="row">Nama_Rambu</th>\
                         <td class="visible-with-data" id="Nama_Rambu">' + (feature.properties['Nama_Rambu'] !== null ? autolinker.link(String(feature.properties['Nama_Rambu']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Jenis Rambu</th>\
+                        <th scope="row">Jenis_Ramb</th>\
                         <td class="visible-with-data" id="Jenis_Ramb">' + (feature.properties['Jenis_Ramb'] !== null ? autolinker.link(String(feature.properties['Jenis_Ramb']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
@@ -377,7 +374,7 @@
                         <td class="visible-with-data" id="Foto">' + (feature.properties['Foto'] !== null ? '<img src="images/' + String(feature.properties['Foto']).replace(/[\\/:]/g, '_').trim().replace(/'/g, '\'').replace(/"/g, '&quot;') + '">' : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Jadwal Perawatan</th>\
+                        <th scope="row">Jadwal</th>\
                         <td class="visible-with-data" id="Jadwal">' + (feature.properties['Jadwal'] !== null ? autolinker.link(String(feature.properties['Jadwal']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
@@ -396,7 +393,7 @@
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
-            iconUrl: 'markers/Rambu_4.svg',
+            iconUrl: 'markers/tikunganKanan.svg',
             iconSize: [26.599999999999998, 26.599999999999998]
         }),
                 interactive: true,
@@ -408,7 +405,7 @@
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
-            iconUrl: 'markers/Rambu_4.svg',
+            iconUrl: 'markers/tikunganKiri.svg',
             iconSize: [26.599999999999998, 26.599999999999998]
         }),
                 interactive: true,
@@ -420,7 +417,7 @@
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
-            iconUrl: 'markers/Rambu_4.svg',
+            iconUrl: 'markers/30km.svg',
             iconSize: [26.599999999999998, 26.599999999999998]
         }),
                 interactive: true,
@@ -432,7 +429,7 @@
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
-            iconUrl: 'markers/Rambu_4.svg',
+            iconUrl: 'markers/40km.svg',
             iconSize: [26.599999999999998, 26.599999999999998]
         }),
                 interactive: true,
@@ -444,7 +441,7 @@
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
-            iconUrl: 'markers/Rambu_4.svg',
+            iconUrl: 'markers/busstop.svg',
             iconSize: [26.599999999999998, 26.599999999999998]
         }),
                 interactive: true,
@@ -456,7 +453,7 @@
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
-            iconUrl: 'markers/Rambu_4.svg',
+            iconUrl: 'markers/proyek.svg',
             iconSize: [26.599999999999998, 26.599999999999998]
         }),
                 interactive: true,
@@ -468,7 +465,7 @@
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
-            iconUrl: 'markers/Rambu_4.svg',
+            iconUrl: 'markers/tanjakan.svg',
             iconSize: [26.599999999999998, 26.599999999999998]
         }),
                 interactive: true,
@@ -480,7 +477,7 @@
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
-            iconUrl: 'markers/Rambu_4.svg',
+            iconUrl: 'markers/turunan.svg',
             iconSize: [26.599999999999998, 26.599999999999998]
         }),
                 interactive: true,
@@ -492,7 +489,7 @@
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
-            iconUrl: 'markers/Rambu_4.svg',
+            iconUrl: 'markers/dilarangNyalip.svg',
             iconSize: [26.599999999999998, 26.599999999999998]
         }),
                 interactive: true,
@@ -504,7 +501,7 @@
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
-            iconUrl: 'markers/Rambu_4.svg',
+            iconUrl: 'markers/masjid.svg',
             iconSize: [26.599999999999998, 26.599999999999998]
         }),
                 interactive: true,
@@ -516,7 +513,7 @@
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
-            iconUrl: 'markers/Rambu_4.svg',
+            iconUrl: 'markers/tandaSeru.svg',
             iconSize: [26.599999999999998, 26.599999999999998]
         }),
                 interactive: true,
@@ -528,7 +525,7 @@
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
-            iconUrl: 'markers/Rambu_4.svg',
+            iconUrl: 'markers/peringatanNyebrang.svg',
             iconSize: [26.599999999999998, 26.599999999999998]
         }),
                 interactive: true,
@@ -540,7 +537,7 @@
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
-            iconUrl: 'markers/Rambu_4.svg',
+            iconUrl: 'markers/tikunganGanda.svg',
             iconSize: [26.599999999999998, 26.599999999999998]
         }),
                 interactive: true,
@@ -552,7 +549,7 @@
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
-            iconUrl: 'markers/Rambu_4.svg',
+            iconUrl: 'markers/kesehatan.svg',
             iconSize: [26.599999999999998, 26.599999999999998]
         }),
                 interactive: true,
@@ -564,7 +561,7 @@
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
-            iconUrl: 'markers/Rambu_4.svg',
+            iconUrl: 'markers/petunjukNyebrang.svg',
             iconSize: [26.599999999999998, 26.599999999999998]
         }),
                 interactive: true,
@@ -576,7 +573,7 @@
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
-            iconUrl: 'markers/Rambu_4.svg',
+            iconUrl: 'markers/simp4pri.svg',
             iconSize: [26.599999999999998, 26.599999999999998]
         }),
                 interactive: true,
@@ -761,20 +758,8 @@
                         <td class="visible-with-data" id="Waktu Keja">' + (feature.properties['Waktu Keja'] !== null ? autolinker.link(String(feature.properties['Waktu Keja']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Tempat Kejadian</th>\
-                        <td class="visible-with-data" id="Tempat Kej">' + (feature.properties['Tempat Kej'] !== null ? autolinker.link(String(feature.properties['Tempat Kej']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Jenis/Tipe</th>\
-                        <td class="visible-with-data" id="Jenis/Tipe">' + (feature.properties['Jenis/Tipe'] !== null ? autolinker.link(String(feature.properties['Jenis/Tipe']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
                         <th scope="row">Kenapa Kecelakaan Terjadi</th>\
                         <td class="visible-with-data" id="Kenapa Kec">' + (feature.properties['Kenapa Kec'] !== null ? autolinker.link(String(feature.properties['Kenapa Kec']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Latlong</th>\
-                        <td class="visible-with-data" id="Latlong">' + (feature.properties['Latlong'] !== null ? autolinker.link(String(feature.properties['Latlong']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
